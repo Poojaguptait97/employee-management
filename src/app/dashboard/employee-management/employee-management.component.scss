@@ -1,0 +1,188 @@
+.crud-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .header h1 {
+    color: #3f51b5;
+    font-size: 24px;
+  }
+  
+  .add-employee {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-employee:hover {
+    background-color: #303f9f;
+  }
+  
+  .filter-container {
+    margin-bottom: 10px;
+  }
+  
+  .filter-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .crud-table th, .crud-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .crud-table th {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .crud-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .crud-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .action {
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  .action.edit {
+    color: #3f51b5;
+    font-size: 20px;
+  }
+
+  button.action.edit{
+    border: none;
+    background: none;
+  }
+  
+  .action.delete {
+    color: #e53935;
+  }
+
+  button.action.delete{
+    border: none;
+    background: none;
+  }
+  
+  .pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .items-per-page select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .pagination {
+    display: flex;
+    align-items: center;
+  }
+  
+  .pagination span {
+    margin-right: 10px;
+  }
+  
+  .pagination-button {
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .pagination-button:hover {
+    background-color: #303f9f;
+  }
+
+  .input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Adjust as needed */
+  }
+  
+  .filter-input {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Add space for the icon */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .input-wrapper i {
+    position: absolute;
+    top: 50%;
+    right: 60px; /* Adjust position */
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 16px;
+    pointer-events: none; /* Prevent click on the icon */
+  }
+
+  .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 100%; /* Adjust as needed */
+  }
+  
+  .filter-input {
+    flex: 1; /* Take up available space */
+    padding: 10px 60px 10px 10px; /* Add space for buttons/icons */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .fa-search {
+    position: absolute;
+    right: 80px; /* Adjust as needed */
+    color: #aaa;
+    font-size: 16px;
+    pointer-events: none;
+  }
+  
+  .clear-button {
+    position: absolute;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: #d9534f;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .clear-button:hover {
+    color: #c9302c; /* Darker color on hover */
+  }
+  
+  
+  

@@ -1,0 +1,58 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ title }}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="bsModalRef.hide()"></button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="editUserForm" (ngSubmit)="save(editUserForm)">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="userName">Name</label>
+                    <input type="text" placeholder="Enter Name" formControlName="userName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Enter Email" formControlName="email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="education">Education</label>
+                    <input type="text" placeholder="Enter education" formControlName="education" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="designation">Designation</label>
+                    <input type="text" placeholder="Enter designation" formControlName="designation"
+                        class="form-control" />
+                </div>
+            </div>
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" placeholder="Enter DOB" formControlName="dob" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select formControlName="gender" class="form-control">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Genderfluid">Genderfluid</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Experience</label>
+                    <input type="text" placeholder="Enter experience" formControlName="experience"
+                        class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="package">Package</label>
+                    <input type="text" placeholder="Enter package" formControlName="package" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="bsModalRef.hide()">Close</button>
+    <button type="submit" class="btn btn-primary" (click)="save(editUserForm)">{{buttonName}}</button>
+</div>

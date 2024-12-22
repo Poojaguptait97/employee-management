@@ -1,0 +1,81 @@
+<div class="crud-container">
+  <div class="header">
+    <h1>Employee Details</h1>
+    <button class="add-employee" (click)="openAddEditModal()">Add Employee</button>
+  </div>
+  <div class="filter-container">
+    <div class="input-wrapper">
+      <input type="text" placeholder="Enter User Name/User Email" #filterValue class="filter-input"
+        (keyup.enter)="searchDetails(filterValue.value)" />
+      <i class="fa fa-search"></i>
+      <button type="button" class="clear-button" (click)="clearField()">
+        Clear
+      </button>
+    </div>
+  </div>
+  <table class="crud-table">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>dob</th>
+        <th>Gender</th>
+        <th>Education</th>
+        <th>Designation</th>
+        <th>Experience</th>
+        <th>Package</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of paginatedList; let i = index">
+        <td>{{emp.userName}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.dob}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.education}}</td>
+        <td>{{emp.designation}}</td>
+        <td>{{emp.experience}}</td>
+        <td>₹{{emp.package}}.00L</td>
+        <td>
+          <button class="action edit" (click)="openAddEditModal(emp.Id)"><span>&#9998;</span></button>
+          <button class="action delete" (click)="openDeleteConfirmationModal(emp.Id)"><i class="fa fa-trash-o" style="font-size:20px;color:red"></i></button>
+        </td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+
+  <!-- <div class="pagination-container">
+      <div class="items-per-page">
+        Items per page:
+        <select>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <div class="pagination">
+        <span>1 - 5 of 200</span>
+        <button class="pagination-button">&#8592;</button>
+        <button class="pagination-button">&#8594;</button>
+      </div>
+    </div> -->
+
+    <div class="pagination-container">
+      <div class="items-per-page">
+        Items per page:
+        <select [(ngModel)]="itemsPerPage" (change)="onPageSizeChange()">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <div class="pagination">
+        <span>{{ startItem + 1 }} - {{ endItem }} of {{ employeeList.length }}</span>
+        <button class="pagination-button" [disabled]="currentPage === 1" (click)="previousPage()">&#8592;</button>
+        <button class="pagination-button" [disabled]="currentPage === totalPages" (click)="nextPage()">&#8594;</button>
+      </div>
+    </div>
+
+</div>
